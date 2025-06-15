@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoPatch - Secure. Simplify. Scale.</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #2c2c2c;
+      background-color: #ffffff;
+    }
+
+    nav {
+      background-color: #1d3a34;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1em;
+    }
+
+    header {
+      background-color: #1d3a34;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      padding: 12px 24px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      text-decoration: none;
+    }
+
+    .services, .testimonials, .contact {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .services h2, .testimonials h2, .contact h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card, .testimonial {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card img {
+      max-width: 80px;
+      margin-bottom: 15px;
+      loading: lazy;
+    }
+
+    .service-card h3, .testimonial h3 {
+      color: #1d3a34;
+    }
+
+    .service-card ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .service-card ul li::before {
+      content: '\2713';
+      color: #4CAF50;
+      margin-right: 8px;
+    }
+
+    .testimonial {
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      color: #1d3a34;
+    }
+
+    .contact {
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .contact p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    .footer {
+      background-color: #1d3a34;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      header h1 {
+        font-size: 2em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+
+      .cta-button {
+        font-size: 0.9em;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">GoPatch</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Secure. Simplify. Scale.</h1>
+    <p>Helping schools and small businesses stay secure, up-to-date, and on-track with expert IT consulting, procurement, and patch management.</p>
+    <a class="cta-button" href="#contact">Book a Free Consultation</a>
+  </header>
+
+  <section class="services" id="services">
+    <h2>What We Do</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/4caf50/system-task.png" alt="Patch Management Icon">
+        <h3>Patch Management</h3>
+        <p>Keep your devices secure and compliant with light-touch automated patching for Windows and Mac.</p>
+        <ul>
+          <li>Secure Device Updates</li>
+          <li>Compliance & Audit Reporting</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/4caf50/consultation.png" alt="IT Consulting Icon">
+        <h3>IT Consulting</h3>
+        <p>Strategic, no-nonsense advice from an experienced consultant working across education and SME sectors.</p>
+        <ul>
+          <li>IT Strategy & Roadmaps</li>
+          <li>Budgeting & Team Structure Review</li>
+          <li>Cloud, Network & Security Guidance</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/4caf50/buy.png" alt="Procurement Icon">
+        <h3>IT Procurement</h3>
+        <p>Independent advice and end-to-end support with choosing the right technology, vendors, and services.</p>
+        <ul>
+          <li>Device & Software Procurement</li>
+          <li>Licensing & Cost Optimisation</li>
+          <li>Supplier Vetting & Contract Reviews</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/100/4caf50/project.png" alt="Technical Projects Icon">
+        <h3>Technical Projects</h3>
+        <p>From infrastructure upgrades to cloud migrations—delivered with clarity, structure, and impact.</p>
+        <ul>
+          <li>Network & Wireless Improvements</li>
+          <li>Server & Cloud Migrations</li>
+          <li>Print, MFDs & Security Rollouts</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+      "GoPatch made a huge difference to our IT infrastructure. Reliable, proactive and always professional."
+      <strong>– Sarah T., School Business Manager</strong>
+    </div>
+    <div class="testimonial">
+      "Thanks to GoPatch, our patching and compliance are now fully automated. I can finally sleep at night."
+      <strong>– Mark R., IT Manager</strong>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Interested in working together? Get in touch and we'll get back to you shortly.</p>
+    <a class="cta-button" href="mailto:info@gopatch.uk">Email Us</a>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 GoPatch. All rights reserved.
+  </footer>
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1d3a34; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 0.9em; z-index: 9999;">
+  <span>This website uses cookies to ensure you get the best experience. <a href="#" style="color: #4CAF50; text-decoration: underline;">Learn more</a></span>
+  <button onclick="document.getElementById('cookie-banner').style.display='none'" style="background: #4CAF50; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Got it</button>
+</div>
+
+</body>
+</html>
