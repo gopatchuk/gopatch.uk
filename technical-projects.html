@@ -9,8 +9,8 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #ffffff;
       color: #2c2c2c;
+      background-color: #ffffff;
     }
 
     header {
@@ -25,38 +25,43 @@
       margin-bottom: 10px;
     }
 
-    header p {
-      font-size: 1.2em;
-      max-width: 800px;
+    main {
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 40px 20px;
     }
 
     section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin-bottom: 40px;
     }
 
-    section h2 {
+    h2 {
       font-size: 1.8em;
       color: #1d3a34;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
-    ul {
-      padding-left: 20px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
-    li {
-      margin-bottom: 10px;
+    .card {
+      background-color: #f4f4f4;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .cta {
-      text-align: center;
-      margin: 50px 0;
+    .card h3 {
+      margin-top: 0;
+      color: #1d3a34;
     }
 
-    .cta a {
+    .cta-button {
+      display: inline-block;
+      margin-top: 30px;
       padding: 12px 24px;
       background-color: #4CAF50;
       color: white;
@@ -65,50 +70,60 @@
       font-size: 1em;
       text-decoration: none;
     }
+
+    footer {
+      background-color: #1d3a34;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Technical Projects</h1>
-    <p>From networks to migrations, we deliver practical IT solutions with structure, clarity, and measurable impact.</p>
+    <p>Clear, structured IT project delivery - without the jargon</p>
   </header>
 
-  <section>
-    <h2>Overview</h2>
-    <p>We lead or support technical IT projects that make your environment more secure, efficient, and future-ready. We plan with you, not just for you.</p>
-  </section>
+  <main>
+    <section>
+      <h2>What Are Technical Projects?</h2>
+      <p>Whether you're upgrading infrastructure, migrating to the cloud, or rolling out new devices, our technical project service is about delivering change confidently - on time, on budget, and without surprises.</p>
+    </section>
 
-  <section>
-    <h2>What We Offer</h2>
-    <ul>
-      <li><strong>Network & Wireless:</strong> Site-wide improvements to speed, reliability, and coverage.</li>
-      <li><strong>Cloud & Server Migrations:</strong> Move to cloud platforms or refresh on-prem systems without disruption.</li>
-      <li><strong>Security & Print:</strong> Secure access control, MFD setups, or implementing filtering solutions.</li>
-    </ul>
-  </section>
+    <section>
+      <h2>How We Help</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Network & Infrastructure</h3>
+          <p>Switch upgrades, Wi-Fi redesigns, or structured cabling - we assess, scope, and coordinate improvements end to end.</p>
+        </div>
+        <div class="card">
+          <h3>Cloud & Server Migrations</h3>
+          <p>From on-prem to Azure or hybrid setups, we plan and deliver cloud transitions with clear documentation and testing.</p>
+        </div>
+        <div class="card">
+          <h3>Rollouts & Refreshes</h3>
+          <p>Deploying new devices, security tools or print systems? We handle the technical planning and ensure seamless rollout.</p>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Why It Matters</h2>
-    <p>Technical projects can stall when the scope drifts, vendors push extras, or internal teams feel overwhelmed. We keep things clear, costed, and achievable from the start.</p>
-  </section>
+    <section>
+      <h2>Why It Matters</h2>
+      <p>Poorly managed projects cost time, money, and trust. We take a structured, practical approach that balances your business needs with technical requirements - making change easier for everyone.</p>
+    </section>
 
-  <section>
-    <h2>Who It’s For</h2>
-    <ul>
-      <li>Schools upgrading networks or migrating systems</li>
-      <li>SMEs needing structure for internal IT changes</li>
-      <li>Any organisation needing help delivering specific IT outcomes</li>
-    </ul>
-  </section>
+    <section>
+      <h2>Book a Free Consultation</h2>
+      <p>Planning a change or just want an extra pair of eyes? Let's talk about how we can support your next project.</p>
+      <a class="cta-button" href="mailto:info@gopatch.uk">Get in Touch</a>
+    </section>
+  </main>
 
-  <section>
-    <h2>Getting Started</h2>
-    <p>We’ll help scope the work, suggest timelines, and either manage the project or work alongside your existing team.</p>
-  </section>
-
-  <div class="cta">
-    <p>Bring clarity to your next IT project.</p>
-    <a href="mailto:info@gopatch.uk">Email Us</a>
-  </div>
+  <footer>
+    &copy; 2025 GoPatch. All rights reserved.
+  </footer>
 </body>
 </html>
