@@ -9,8 +9,8 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #ffffff;
       color: #2c2c2c;
+      background-color: #ffffff;
     }
 
     header {
@@ -25,38 +25,43 @@
       margin-bottom: 10px;
     }
 
-    header p {
-      font-size: 1.2em;
-      max-width: 800px;
+    main {
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 40px 20px;
     }
 
     section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin-bottom: 40px;
     }
 
-    section h2 {
+    h2 {
       font-size: 1.8em;
       color: #1d3a34;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
-    ul {
-      padding-left: 20px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
-    li {
-      margin-bottom: 10px;
+    .card {
+      background-color: #f4f4f4;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .cta {
-      text-align: center;
-      margin: 50px 0;
+    .card h3 {
+      margin-top: 0;
+      color: #1d3a34;
     }
 
-    .cta a {
+    .cta-button {
+      display: inline-block;
+      margin-top: 30px;
       padding: 12px 24px;
       background-color: #4CAF50;
       color: white;
@@ -65,50 +70,60 @@
       font-size: 1em;
       text-decoration: none;
     }
+
+    footer {
+      background-color: #1d3a34;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>IT Procurement</h1>
-    <p>Independent advice and end-to-end support to help you choose the right technology, vendors, and services.</p>
+    <p>Find the right tech, vendors, and contracts with confidence</p>
   </header>
 
-  <section>
-    <h2>Overview</h2>
-    <p>We help you make informed purchasing decisions that match your needs, not the sales pitch. With no hidden incentives, our procurement support is grounded in clarity, comparison, and value.</p>
-  </section>
+  <main>
+    <section>
+      <h2>What Is IT Procurement?</h2>
+      <p>IT procurement covers the selection, evaluation, and purchasing of technology to support your organisation's goals. GoPatch helps you make informed decisions that fit your needs and budget - with no vendor lock-in or hidden costs.</p>
+    </section>
 
-  <section>
-    <h2>What We Offer</h2>
-    <ul>
-      <li><strong>Technology Selection:</strong> Advice on the best-fit devices, systems, or cloud tools for your environment.</li>
-      <li><strong>Vendor Comparisons:</strong> We assess cost, support, scalability, and contract terms - then help you choose wisely.</li>
-      <li><strong>Procurement Management:</strong> We can run the process or just sense-check the detail - you stay in control.</li>
-    </ul>
-  </section>
+    <section>
+      <h2>How We Help</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Hardware & Software Selection</h3>
+          <p>From devices to cloud platforms, we help you choose fit-for-purpose technology tailored to your environment.</p>
+        </div>
+        <div class="card">
+          <h3>Licensing & Cost Optimisation</h3>
+          <p>We review existing contracts and recommend ways to reduce spend without sacrificing performance or compliance.</p>
+        </div>
+        <div class="card">
+          <h3>Vendor & Contract Review</h3>
+          <p>Independent vetting of suppliers and services to ensure fair pricing, reliable support, and scalable agreements.</p>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Why It Matters</h2>
-    <p>Poor procurement wastes budget and time. We help avoid over-buying, vendor lock-in, and hidden costs by asking the right questions and reading the fine print.</p>
-  </section>
+    <section>
+      <h2>Why It Matters</h2>
+      <p>Without guidance, procurement can lead to waste, complexity, or misaligned services. We make the process transparent and strategic - helping you avoid common pitfalls and stay focused on delivery.</p>
+    </section>
 
-  <section>
-    <h2>Who It’s For</h2>
-    <ul>
-      <li>Schools managing tight budgets and needing independent guidance</li>
-      <li>Growing teams needing devices, software, or platforms</li>
-      <li>Organisations switching suppliers or renegotiating contracts</li>
-    </ul>
-  </section>
+    <section>
+      <h2>Book a Free Consultation</h2>
+      <p>We're here to support schools, charities, and SMEs who want clarity and confidence in their IT investments.</p>
+      <a class="cta-button" href="mailto:info@gopatch.uk">Email Us to Get Started</a>
+    </section>
+  </main>
 
-  <section>
-    <h2>Getting Started</h2>
-    <p>We offer fixed-price advice or end-to-end management depending on your needs. Just reach out and we’ll suggest a plan that fits.</p>
-  </section>
-
-  <div class="cta">
-    <p>Let’s make your next IT investment count.</p>
-    <a href="mailto:info@gopatch.uk">Email Us</a>
-  </div>
+  <footer>
+    &copy; 2025 GoPatch. All rights reserved.
+  </footer>
 </body>
 </html>
