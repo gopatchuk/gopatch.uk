@@ -9,8 +9,8 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #ffffff;
       color: #2c2c2c;
+      background-color: #ffffff;
     }
 
     header {
@@ -25,38 +25,43 @@
       margin-bottom: 10px;
     }
 
-    header p {
-      font-size: 1.2em;
-      max-width: 800px;
+    main {
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 40px 20px;
     }
 
     section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin-bottom: 40px;
     }
 
-    section h2 {
+    h2 {
       font-size: 1.8em;
       color: #1d3a34;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
-    ul {
-      padding-left: 20px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
 
-    li {
-      margin-bottom: 10px;
+    .card {
+      background-color: #f4f4f4;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .cta {
-      text-align: center;
-      margin: 50px 0;
+    .card h3 {
+      margin-top: 0;
+      color: #1d3a34;
     }
 
-    .cta a {
+    .cta-button {
+      display: inline-block;
+      margin-top: 30px;
       padding: 12px 24px;
       background-color: #4CAF50;
       color: white;
@@ -65,51 +70,60 @@
       font-size: 1em;
       text-decoration: none;
     }
+
+    footer {
+      background-color: #1d3a34;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Patch Management</h1>
-    <p>Keep every device secure, updated, and compliant — with minimal effort from your team.</p>
+    <p>Secure, automate, and simplify your device patching process</p>
   </header>
 
-  <section>
-    <h2>Overview</h2>
-    <p>Patch Management is about more than just updates — it's peace of mind. We help you keep Windows, macOS, and core software up-to-date, patched against the latest vulnerabilities, and aligned with compliance expectations (especially in education or regulated industries).</p>
-  </section>
+  <main>
+    <section>
+      <h2>What Is Patch Management?</h2>
+      <p>Patch management is the process of distributing and applying software updates to ensure devices remain secure and up-to-date. At GoPatch, we handle this for you in a low-touch, high-trust way, so you can focus on what matters.</p>
+    </section>
 
-  <section>
-    <h2>What We Offer</h2>
-    <ul>
-      <li><strong>Automated Device Patching:</strong> Cloud-managed updates for Windows and macOS, scheduled and monitored.</li>
-      <li><strong>Light-touch Monitoring:</strong> We ensure updates run smoothly — and alert you only when needed.</li>
-      <li><strong>Audit-Ready Reports:</strong> Generate proof of compliance for governors, trustees, or leadership.</li>
-      <li><strong>Secure Baseline Settings:</strong> Enforce OS-level protections like BitLocker and Defender.</li>
-    </ul>
-  </section>
+    <section>
+      <h2>Our Approach</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Automated Updates</h3>
+          <p>We automate patch delivery across your Windows and Mac devices, ensuring you stay ahead of critical vulnerabilities with minimal disruption.</p>
+        </div>
+        <div class="card">
+          <h3>Compliance Support</h3>
+          <p>Need audit reports or evidence for frameworks like Cyber Essentials? We provide simple documentation and checks to support you.</p>
+        </div>
+        <div class="card">
+          <h3>Dashboard Oversight</h3>
+          <p>Gain visibility over your patch status with a shared dashboard, or let us handle it for you while keeping you in the loop.</p>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Why It Matters</h2>
-    <p>Out-of-date systems are the #1 vector for security breaches. Patching regularly reduces risk dramatically — and lets your team focus on supporting users, not chasing updates.</p>
-  </section>
+    <section>
+      <h2>Why It Matters</h2>
+      <p>Outdated systems are the number one target for cyber attacks. Our patch management service helps prevent breaches, data loss, and compliance failures, without burdening your in-house team.</p>
+    </section>
 
-  <section>
-    <h2>Who It’s For</h2>
-    <ul>
-      <li>Schools who need to meet safeguarding expectations</li>
-      <li>SMEs with remote teams or unmanaged laptops</li>
-      <li>IT teams with limited time for manual patching</li>
-    </ul>
-  </section>
+    <section>
+      <h2>Book a Free Consultation</h2>
+      <p>If you're unsure where to start or want help setting it up, we offer a no-pressure discovery call to assess your needs.</p>
+      <a class="cta-button" href="mailto:info@gopatch.uk">Email Us to Get Started</a>
+    </section>
+  </main>
 
-  <section>
-    <h2>Getting Started</h2>
-    <p>We’ll audit your current estate, onboard your devices, and automate the process — all within a few days. No hardware required.</p>
-  </section>
-
-  <div class="cta">
-    <p>We’d be happy to show you how this works in a free consultation.</p>
-    <a href="mailto:info@gopatch.uk">Email Us</a>
-  </div>
+  <footer>
+    &copy; 2025 GoPatch. All rights reserved.
+  </footer>
 </body>
 </html>
