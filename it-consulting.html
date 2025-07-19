@@ -4,83 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IT Consulting | GoPatch</title>
+  <link rel="stylesheet" href="/style.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #2c2c2c;
-      background-color: #ffffff;
-    }
-
-    header {
-      background-color: #1d3a34;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      font-size: 1.8em;
-      color: #1d3a34;
-      margin-bottom: 15px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background-color: #f4f4f4;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #1d3a34;
-    }
-
-    .cta-button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 24px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 1em;
-      text-decoration: none;
-    }
-
-    footer {
-      background-color: #1d3a34;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-    }
+    /* Your custom styles here (or move to style.css for consistency) */
   </style>
 </head>
 <body>
+  <!-- Injected Navbar -->
+  <div id="navbar-placeholder"></div>
+
   <header>
     <h1>IT Consulting</h1>
     <p>Clear, flexible IT advice for schools and growing businesses</p>
@@ -89,7 +21,7 @@
   <main>
     <section>
       <h2>What Is IT Consulting?</h2>
-      <p>We provide strategic, no-nonsense IT advice shaped by hands-on experience in education and business. Whether you're restructuring your team or planning for growth, we bring clarity, planning, and confidence to your decisions.</p>
+      <p>We provide strategic, no-nonsense IT advice shaped by hands-on experience in education and business...</p>
     </section>
 
     <section>
@@ -97,27 +29,27 @@
       <div class="grid">
         <div class="card">
           <h3>Strategy & Roadmaps</h3>
-          <p>We help define practical, tailored IT strategies that support your goals, budgets, and long-term plans.</p>
+          <p>We help define practical, tailored IT strategies...</p>
         </div>
         <div class="card">
           <h3>Team & Budget Reviews</h3>
-          <p>We assess team structure, job roles, and resource allocations to improve delivery and resilience.</p>
+          <p>We assess team structure, job roles, and resource allocations...</p>
         </div>
         <div class="card">
           <h3>Infrastructure & Cloud</h3>
-          <p>Guidance on infrastructure modernisation, cloud adoption, and how to make the most of your tech stack.</p>
+          <p>Guidance on infrastructure modernisation, cloud adoption...</p>
         </div>
       </div>
     </section>
 
     <section>
       <h2>Why It Matters</h2>
-      <p>Too often, IT decisions are made in a vacuum or under pressure. Our consulting gives you breathing room, a second opinion, and a structured way to align IT with your mission - without jargon or bias.</p>
+      <p>Too often, IT decisions are made in a vacuum or under pressure...</p>
     </section>
 
     <section>
       <h2>Book a Free Consultation</h2>
-      <p>Let’s talk about your current setup, your future plans, and where we can help. No pressure, no sales tactics.</p>
+      <p>Let’s talk about your current setup, your future plans...</p>
       <a class="cta-button" href="mailto:info@gopatch.uk">Email Us to Get Started</a>
     </section>
   </main>
@@ -125,5 +57,8 @@
   <footer>
     &copy; 2025 GoPatch. All rights reserved.
   </footer>
+
+  <!-- Load navbar HTML dynamically -->
+  <script src="/scripts/navbar.js"></script>
 </body>
 </html>
