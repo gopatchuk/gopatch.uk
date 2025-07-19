@@ -23,13 +23,16 @@
     section {
       margin-bottom: 40px;
     }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
     .card {
       background-color: #f4f4f4;
       border-radius: 8px;
       padding: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      text-align: left;
     }
     .card h3 {
       margin-top: 0;
@@ -67,38 +70,40 @@
 
   <header style="background-color:#1d3a34; color:white; text-align:center; padding:60px 20px;">
     <h1>Technical Projects</h1>
-    <p>Delivering structured, high-impact infrastructure and cloud projects</p>
+    <p>Delivering well-planned, low-disruption upgrades for your infrastructure and cloud</p>
   </header>
 
   <main>
     <section>
-      <h2>What We Do</h2>
-      <p>From network refreshes to cloud migrations and security rollouts, we manage your technical projects with clarity, structure and minimal disruption.</p>
+      <h2>What Are Technical Projects?</h2>
+      <p>When it’s time to refresh your infrastructure or deliver a key upgrade, we help you plan and execute IT projects with structure, clarity and minimal disruption. We’ve delivered projects for schools and SMEs ranging from network refreshes to server migrations and cloud rollouts.</p>
     </section>
 
     <section>
-      <h2>Typical Projects</h2>
-      <div class="card">
-        <h3>Network & Wireless Improvements</h3>
-        <p>Designing and implementing improved network infrastructure and Wi‑Fi across schools and SMEs.</p>
-      </div>
-      <div class="card">
-        <h3>Server & Cloud Migrations</h3>
-        <p>Planning, migrating and optimising Microsoft or Linux server environments on-prem or in the cloud.</p>
-      </div>
-      <div class="card">
-        <h3>Print, Security & Device Rollouts</h3>
-        <p>Coordinating new hardware projects, secure device deployment and managed print services.</p>
+      <h2>What We Deliver</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Network & Wireless Upgrades</h3>
+          <p>We design and deliver wired and wireless networks that improve reliability, performance, and coverage across your site.</p>
+        </div>
+        <div class="card">
+          <h3>Server & Cloud Migrations</h3>
+          <p>We help you migrate legacy servers to the cloud or modernise your on-prem setup — with clear planning, timelines, and fallback options.</p>
+        </div>
+        <div class="card">
+          <h3>Device, Print & Security Projects</h3>
+          <p>From managed print rollouts to device refreshes and firewall upgrades, we bring structure and support at every step.</p>
+        </div>
       </div>
     </section>
 
     <section>
       <h2>Why It Matters</h2>
-      <p>Well-executed projects reduce downtime, limit risk, and ensure your tech environment supports your organisation — not distracts from it.</p>
+      <p>Poorly delivered technical projects can disrupt learning, productivity, and budgets. Our approach is grounded in education and SME delivery experience — clear briefs, no surprises, and minimal downtime.</p>
     </section>
 
     <section style="text-align:center;">
-      <h2>Ready to Get Started?</h2>
+      <h2>Planning a Project?</h2>
       <a href="/contact.html" class="cta-button">Send a Message</a>
       <a href="/contact.html#calendly" class="cta-button secondary">Book a Free Call</a>
     </section>
