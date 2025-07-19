@@ -4,72 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us | GoPatch</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/styles/navbar.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      color: #2c2c2c;
       background-color: #ffffff;
-    }
-
-    h1, h2 {
-      color: #1d3a34;
+      color: #2c2c2c;
     }
 
     main {
-      max-width: 1000px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 40px 20px;
     }
 
+    h1 {
+      text-align: center;
+      color: #1d3a34;
+    }
+
     form {
-      background-color: #f4f4f4;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 30px;
     }
 
     label {
-      display: block;
-      margin-top: 10px;
       font-weight: bold;
     }
 
     input, textarea {
-      width: 100%;
       padding: 10px;
-      margin-top: 5px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
       font-size: 1em;
-    }
-
-    textarea {
+      border: 1px solid #ccc;
+      border-radius: 6px;
       resize: vertical;
-      min-height: 100px;
     }
 
-    .cta-button {
-      margin-top: 20px;
+    button {
+      padding: 12px;
       background-color: #4CAF50;
       color: white;
       border: none;
-      padding: 12px 24px;
-      font-size: 1em;
       border-radius: 6px;
+      font-size: 1em;
       cursor: pointer;
     }
 
-    .cta-button:hover {
-      background-color: #3c9e46;
+    button:hover {
+      background-color: #45a049;
     }
 
-    .calendly-wrapper {
-      margin-top: 40px;
+    .success, .error {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .calendly {
+      margin-top: 60px;
     }
 
     footer {
@@ -78,74 +82,87 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
+      margin-top: 80px;
     }
   </style>
 </head>
 <body>
-  <!-- Shared navbar -->
+  <!-- Navigation -->
   <div id="navbar-placeholder"></div>
 
-  <!-- Page header -->
-  <header style="background-color: #1d3a34; color: white; text-align: center; padding: 60px 20px;">
-    <h1>Contact Us</h1>
-    <p>Send us a message or book a free call to get started</p>
-  </header>
-
   <main>
-    <section>
-      <h2>Send Us a Message</h2>
-      <form id="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
+    <h1>Contact Us</h1>
+    <p style="text-align:center;">Use the form below or book a call with us directly. We'll get back to you promptly.</p>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
+    <form id="contact-form">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required />
 
-        <button type="submit" class="cta-button">Send Message</button>
-      </form>
-      <p id="form-status"></p>
-    </section>
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
 
-    <section class="calendly-wrapper">
-      <h2>Book a Free 15-Minute Call</h2>
-      <!-- Calendly inline widget begin -->
+      <button type="submit">Send Message</button>
+      <div id="form-response" class=""></div>
+    </form>
+
+    <div class="calendly">
+      <h2 style="text-align:center; color:#1d3a34;">Prefer to Chat?</h2>
+      <p style="text-align:center;">Book a free 15-minute consultation via Calendly:</p>
+      <!-- Calendly embed -->
       <div class="calendly-inline-widget" data-url="https://calendly.com/mattyc4656" style="min-width:320px;height:700px;"></div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      <!-- Calendly inline widget end -->
-    </section>
+    </div>
   </main>
 
   <footer>
     &copy; 2025 GoPatch. All rights reserved.
   </footer>
 
-  <script src="/scripts/navbar.js"></script>
+  <!-- Navbar loader -->
   <script>
-    // Handle form submission
-    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+    fetch("/navbar.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("navbar-placeholder").innerHTML = html;
+      });
+  </script>
+
+  <!-- Form handler -->
+  <script>
+    const form = document.getElementById('contact-form');
+    const responseBox = document.getElementById('form-response');
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const form = e.target;
+      responseBox.textContent = 'Sending...';
+      responseBox.className = '';
+
       const data = {
         name: form.name.value,
         email: form.email.value,
         message: form.message.value
       };
 
-      const res = await fetch('https://your-worker-url.workers.dev/', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data)
-      });
+      try {
+        const res = await fetch('https://rapid-resonance-0f24.m-cstael.workers.dev/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
 
-      const resultText = document.getElementById('form-status');
-      if (res.ok) {
-        resultText.textContent = "Thanks! Your message has been sent.";
-        form.reset();
-      } else {
-        resultText.textContent = "Sorry, there was an issue sending your message.";
+        if (res.ok) {
+          responseBox.textContent = 'Thanks! Your message was sent.';
+          responseBox.className = 'success';
+          form.reset();
+        } else {
+          throw new Error();
+        }
+      } catch (err) {
+        responseBox.textContent = 'Sorry, something went wrong. Please try again later.';
+        responseBox.className = 'error';
       }
     });
   </script>
