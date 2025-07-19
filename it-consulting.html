@@ -2,53 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IT Consulting | GoPatch</title>
   <link rel="stylesheet" href="/style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
       color: #2c2c2c;
       background-color: #ffffff;
     }
-
-    h1, h2 {
+    h1, h2, h3 {
       color: #1d3a34;
     }
-
     main {
       max-width: 1000px;
       margin: 0 auto;
       padding: 40px 20px;
     }
-
     section {
       margin-bottom: 40px;
     }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
-
     .card {
       background-color: #f4f4f4;
       border-radius: 8px;
       padding: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
     .card h3 {
       margin-top: 0;
       color: #1d3a34;
     }
-
     .cta-button {
       display: inline-block;
-      margin-top: 30px;
+      margin: 20px 10px 0;
       padding: 12px 24px;
       background-color: #4CAF50;
       color: white;
@@ -57,11 +49,14 @@
       font-size: 1em;
       text-decoration: none;
     }
-
+    .cta-button.secondary {
+      background-color: white;
+      color: #1d3a34;
+      border: 2px solid #1d3a34;
+    }
     .cta-button:hover {
       background-color: #3c9e46;
     }
-
     footer {
       background-color: #1d3a34;
       color: white;
@@ -72,11 +67,11 @@
   </style>
 </head>
 <body>
-  <!-- Navbar placeholder -->
+  <!-- Navbar -->
   <div id="navbar-placeholder"></div>
 
-  <!-- Page-specific header -->
-  <header style="background-color: #1d3a34; color: white; text-align: center; padding: 60px 20px;">
+  <!-- Header -->
+  <header style="background-color:#1d3a34; color:white; text-align:center; padding:60px 20px;">
     <h1>IT Consulting</h1>
     <p>Clear, flexible IT advice for schools and growing businesses</p>
   </header>
@@ -84,7 +79,7 @@
   <main>
     <section>
       <h2>What Is IT Consulting?</h2>
-      <p>We provide strategic, no-nonsense IT advice shaped by hands-on experience in education and business. Whether you're restructuring your team or planning for growth, we bring clarity, planning, and confidence to your decisions.</p>
+      <p>We provide strategic, no‑nonsense IT advice shaped by hands‑on experience in education and business. Whether you're restructuring your team or planning for growth, we bring clarity, planning, and confidence to your decisions.</p>
     </section>
 
     <section>
@@ -92,7 +87,7 @@
       <div class="grid">
         <div class="card">
           <h3>Strategy & Roadmaps</h3>
-          <p>We help define practical, tailored IT strategies that support your goals, budgets, and long-term plans.</p>
+          <p>We help define practical, tailored IT strategies that support your goals, budgets, and long‑term plans.</p>
         </div>
         <div class="card">
           <h3>Team & Budget Reviews</h3>
@@ -110,10 +105,11 @@
       <p>Too often, IT decisions are made in a vacuum or under pressure. Our consulting gives you breathing room, a second opinion, and a structured way to align IT with your mission – without jargon or bias.</p>
     </section>
 
-    <section>
-      <h2>Book a Free Consultation</h2>
-      <p>Let’s talk about your current setup, your future plans, and where we can help. No pressure, no sales tactics.</p>
-      <a class="cta-button" href="mailto:info@gopatch.uk">Email Us to Get Started</a>
+    <!-- CTA Block -->
+    <section style="text-align:center;">
+      <h2>Ready to Get Started?</h2>
+      <a href="/contact.html" class="cta-button">Send a Message</a>
+      <a href="/contact.html#calendly" class="cta-button secondary">Book a Free Call</a>
     </section>
   </main>
 
