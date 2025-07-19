@@ -14,6 +14,10 @@
       color: #2c2c2c;
     }
 
+    #navbar-placeholder {
+      min-height: 80px;
+    }
+
     main {
       max-width: 800px;
       margin: 0 auto;
@@ -111,7 +115,6 @@
     <div class="calendly">
       <h2 style="text-align:center; color:#1d3a34;">Prefer to Chat?</h2>
       <p style="text-align:center;">Book a free 15-minute consultation via Calendly:</p>
-      <!-- Calendly embed -->
       <div class="calendly-inline-widget" data-url="https://calendly.com/mattyc4656" style="min-width:320px;height:700px;"></div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
@@ -121,7 +124,7 @@
     &copy; 2025 GoPatch. All rights reserved.
   </footer>
 
-  <!-- Navbar loader -->
+  <!-- Load Navbar -->
   <script>
     fetch("/navbar.html")
       .then(res => res.text())
@@ -130,7 +133,7 @@
       });
   </script>
 
-  <!-- Form handler -->
+  <!-- Handle Form Submission -->
   <script>
     const form = document.getElementById('contact-form');
     const responseBox = document.getElementById('form-response');
