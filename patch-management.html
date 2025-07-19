@@ -2,43 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Patch Management | GoPatch</title>
   <link rel="stylesheet" href="/style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
       color: #2c2c2c;
       background-color: #ffffff;
     }
-
     h1, h2, h3 {
       color: #1d3a34;
     }
-
     main {
       max-width: 1000px;
       margin: 0 auto;
       padding: 40px 20px;
     }
-
     section {
       margin-bottom: 40px;
     }
-
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
     .card {
       background-color: #f4f4f4;
       border-radius: 8px;
       padding: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
     }
-
+    .card h3 {
+      margin-top: 0;
+    }
     .cta-button {
       display: inline-block;
-      margin-top: 20px;
+      margin: 20px 10px 0;
       padding: 12px 24px;
       background-color: #4CAF50;
       color: white;
@@ -47,11 +48,14 @@
       font-size: 1em;
       text-decoration: none;
     }
-
+    .cta-button.secondary {
+      background-color: white;
+      color: #1d3a34;
+      border: 2px solid #1d3a34;
+    }
     .cta-button:hover {
       background-color: #3c9e46;
     }
-
     footer {
       background-color: #1d3a34;
       color: white;
@@ -62,57 +66,46 @@
   </style>
 </head>
 <body>
-  <!-- Shared navigation bar -->
   <div id="navbar-placeholder"></div>
 
-  <!-- Page-specific header -->
-  <header style="background-color: #1d3a34; color: white; text-align: center; padding: 60px 20px;">
+  <header style="background-color:#1d3a34; color:white; text-align:center; padding:60px 20px;">
     <h1>Patch Management</h1>
-    <p>Secure, automate, and simplify your device patching process</p>
+    <p>Keep your devices secure, updated, and compliant — with zero hassle</p>
   </header>
 
   <main>
     <section>
       <h2>What Is Patch Management?</h2>
-      <p>Patch management ensures your Windows and Mac devices stay secure and up to date. At GoPatch, we handle this for you in a low-touch, high-trust way, so you can focus on what matters. :contentReference[oaicite:1]{index=1}</p>
+      <p>Patch management is the process of keeping your systems up to date by applying operating system and software updates. At GoPatch, we handle this for you in a fully managed, low‑touch way — so your team stays protected without lifting a finger.</p>
     </section>
 
     <section>
-      <h2>Our Approach</h2>
-      <div class="card">
-        <h3>Automated Updates</h3>
-        <p>We automate patch delivery across your Windows and Mac devices, ensuring you stay ahead of critical vulnerabilities with minimal disruption. :contentReference[oaicite:2]{index=2}</p>
-      </div>
-      <div class="card">
-        <h3>Compliance Support</h3>
-        <p>Need audit reports or evidence for frameworks like Cyber Essentials? We provide simple documentation and checks to support you. :contentReference[oaicite:3]{index=3}</p>
-      </div>
-      <div class="card">
-        <h3>Dashboard Oversight</h3>
-        <p>Gain visibility over your patch status with a shared dashboard, or let us handle it for you while keeping you in the loop. :contentReference[oaicite:4]{index=4}</p>
+      <h2>What We Offer</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Automated Updates</h3>
+          <p>We deploy patches automatically across your Windows and Mac devices to keep everything secure and up to date — without interrupting your users.</p>
+        </div>
+        <div class="card">
+          <h3>Audit & Compliance</h3>
+          <p>We track patch status and provide exportable reports to help you meet audit requirements, including Cyber Essentials and other standards.</p>
+        </div>
+        <div class="card">
+          <h3>Oversight Without the Noise</h3>
+          <p>We give you access to a clean dashboard (if you want it), or you can leave it to us and receive scheduled check-ins with a summary.</p>
+        </div>
       </div>
     </section>
 
     <section>
       <h2>Why It Matters</h2>
-      <p>Outdated systems are the number one target for cyber attacks. Our patch management service helps prevent breaches, data loss, and compliance failures — without burdening your in-house team. :contentReference[oaicite:5]{index=5}</p>
+      <p>Most cyberattacks exploit known vulnerabilities in unpatched software. With GoPatch, you don’t need to worry about falling behind. Our service reduces risk, supports compliance, and saves internal time — without complex tools or alerts.</p>
     </section>
 
-    <section>
-      <h2>Cyber Essentials Support</h2>
-      <p>Cyber Essentials is a UK government-backed scheme helping organisations protect against common cyber threats. Certification builds trust and demonstrates cybersecurity commitment. :contentReference[oaicite:6]{index=6}</p>
-      <ul>
-        <li>Help understanding the requirements</li>
-        <li>Technical remediations and policy guidance</li>
-        <li>Evidence gathering and form completion</li>
-      </ul>
-      <p>Whether you're securing a new contract, reducing risk exposure, or meeting funding requirements, Cyber Essentials is a great step forward — and we’ll help you get there. :contentReference[oaicite:7]{index=7}</p>
-    </section>
-
-    <section>
-      <h2>Book a Free Consultation</h2>
-      <p>If you're unsure where to start or want help setting it up, we offer a no-pressure discovery call to assess your needs.</p>
-      <a class="cta-button" href="mailto:info@gopatch.uk">Email Us to Get Started</a>
+    <section style="text-align:center;">
+      <h2>Ready to Automate Your Patching?</h2>
+      <a href="/contact.html" class="cta-button">Send a Message</a>
+      <a href="/contact.html#calendly" class="cta-button secondary">Book a Free Call</a>
     </section>
   </main>
 
@@ -120,7 +113,6 @@
     &copy; 2025 GoPatch. All rights reserved.
   </footer>
 
-  <!-- Navbar loader -->
   <script src="/scripts/navbar.js"></script>
 </body>
 </html>
