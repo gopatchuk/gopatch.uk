@@ -80,10 +80,58 @@
       padding: 20px;
       font-size: 0.9em;
     }
+
+    /* Modal styling */
+    #success-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    #success-modal.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    #success-modal .modal-content {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    #success-modal h3 {
+      color: #1d3a34;
+      margin-bottom: 10px;
+    }
+
+    #success-modal button {
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #success-modal button:hover {
+      background-color: #3c9e46;
+    }
   </style>
 </head>
 <body>
-  <!-- Shared navbar -->
   <div id="navbar-placeholder"></div>
 
   <header style="background-color: #1d3a34; color: white; text-align: center; padding: 60px 20px;">
@@ -123,51 +171,87 @@
     &copy; 2025 GoPatch. All rights reserved.
   </footer>
 
-<script src="/scripts/navbar.js"></script>
-<script>
-  document.getElementById('contact-form').addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const form = e.target;
-    const status = document.getElementById('form-status');
+  <!-- Success Modal -->
+  <div id="success-modal">
+    <div class="modal-content">
+      <h3>Thank you!</h3>
+      <p>Your message has been received. We'll be in touch soon.</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
 
-    // Get Turnstile token from hidden input field automatically created by Turnstile
-    const tokenField = document.querySelector('input[name="cf-turnstile-response"]');
-    const turnstileToken = tokenField?.value;
-
-    if (!turnstileToken) {
-      status.textContent = "Please complete the CAPTCHA before submitting.";
-      return;
+  <script src="/scripts/navbar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    function closeModal() {
+      const modal = document.getElementById('success-modal');
+      modal.classList.remove('show');
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 400);
     }
 
-    // Prepare data for the POST request
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-      "cf-turnstile-response": turnstileToken
-    };
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const status = document.getElementById('form-status');
+      const modal = document.getElementById('success-modal');
 
-    try {
-      const res = await fetch('https://dawn-sun-1a9d.m-cstael.workers.dev/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
+      const tokenField = document.querySelector('input[name="cf-turnstile-response"]');
+      const turnstileToken = tokenField?.value;
 
-      if (res.ok) {
-        status.textContent = "Thanks! Your message has been sent.";
-        form.reset();
-        turnstile.reset(); // Reset the CAPTCHA
-      } else {
-        const errorText = await res.text();
-        console.error("Form submission failed:", errorText);
-        status.textContent = "Sorry, there was an issue sending your message.";
+      if (!turnstileToken) {
+        status.textContent = "Please complete the CAPTCHA before submitting.";
+        return;
       }
-    } catch (err) {
-      console.error("Error submitting form:", err);
-      status.textContent = "Something went wrong. Please try again later.";
-    }
-  });
-</script>
+
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value,
+        "cf-turnstile-response": turnstileToken
+      };
+
+      try {
+        const res = await fetch('https://dawn-sun-1a9d.m-cstael.workers.dev/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          form.reset();
+          turnstile.reset();
+          status.textContent = "";
+
+          // Show modal with fade-in
+          modal.style.display = 'flex';
+          setTimeout(() => modal.classList.add('show'), 10);
+
+          // Confetti after short delay
+          setTimeout(() => {
+            confetti({
+              particleCount: 120,
+              spread: 80,
+              origin: { y: 0.5 }
+            });
+          }, 300);
+
+          // Auto-close after 5 seconds
+          setTimeout(() => {
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 400);
+          }, 5000);
+        } else {
+          const errorText = await res.text();
+          console.error("Form submission failed:", errorText);
+          status.textContent = "Sorry, there was an issue sending your message.";
+        }
+      } catch (err) {
+        console.error("Error submitting form:", err);
+        status.textContent = "Something went wrong. Please try again later.";
+      }
+    });
+  </script>
 </body>
 </html>
