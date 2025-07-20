@@ -10,10 +10,18 @@
   }
 
   .navbar .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
     font-size: 1.6em;
     font-weight: bold;
-    color: white;
-    text-decoration: none;
+  }
+
+  .navbar .logo img {
+    height: 40px;
+    margin-right: 10px;
+    display: block;
   }
 
   .nav-links {
@@ -55,7 +63,10 @@
 
 <header>
   <nav class="navbar">
-    <a href="/" class="logo">GoPatch</a>
+    <a href="/" class="logo">
+      <img src="/assets/logo.png" alt="GoPatch Logo" />
+      GoPatch
+    </a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/services.html">Services</a></li>
