@@ -4,9 +4,12 @@
     justify-content: space-between;
     align-items: center;
     background-color: #1d3a34;
-    padding: 20px;
+    padding: 15px 20px;
     color: white;
     flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
 
   .navbar .logo {
@@ -16,11 +19,12 @@
     color: white;
     font-size: 1.6em;
     font-weight: bold;
+    gap: 10px;
   }
 
   .navbar .logo img {
-    height: 100px;
-    margin-right: 8px;
+    height: 36px;
+    width: auto;
     display: block;
   }
 
@@ -30,7 +34,6 @@
     gap: 20px;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
   }
 
   .nav-links li {
@@ -60,18 +63,3 @@
     }
   }
 </style>
-
-<header>
-  <nav class="navbar">
-    <a href="/" class="logo">
-      <img src="/assets/logo.png" alt="GoPatch Logo" />
-      GoPatch
-    </a>
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/testimonials.html">Testimonials</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
