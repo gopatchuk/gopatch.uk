@@ -123,27 +123,31 @@
     &copy; 2025 GoPatch. All rights reserved.
   </footer>
 
-  <script src="/scripts/navbar.js"></script>
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const form = e.target;
-      const status = document.getElementById('form-status');
+<script src="/scripts/navbar.js"></script>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('form-status');
 
-      const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]')?.value;
+    // Get Turnstile token from hidden input field automatically created by Turnstile
+    const tokenField = document.querySelector('input[name="cf-turnstile-response"]');
+    const turnstileToken = tokenField?.value;
 
-      if (!turnstileResponse) {
-        status.textContent = "Please complete the CAPTCHA before submitting.";
-        return;
-      }
+    if (!turnstileToken) {
+      status.textContent = "Please complete the CAPTCHA before submitting.";
+      return;
+    }
 
-      const data = {
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value,
-        'cf-turnstile-response': turnstileResponse
-      };
+    // Prepare data for the POST request
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+      "cf-turnstile-response": turnstileToken
+    };
 
+    try {
       const res = await fetch('https://dawn-sun-1a9d.m-cstael.workers.dev/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -153,11 +157,17 @@
       if (res.ok) {
         status.textContent = "Thanks! Your message has been sent.";
         form.reset();
-        turnstile.reset(); // reset CAPTCHA
+        turnstile.reset(); // Reset the CAPTCHA
       } else {
+        const errorText = await res.text();
+        console.error("Form submission failed:", errorText);
         status.textContent = "Sorry, there was an issue sending your message.";
       }
-    });
-  </script>
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      status.textContent = "Something went wrong. Please try again later.";
+    }
+  });
+</script>
 </body>
 </html>
