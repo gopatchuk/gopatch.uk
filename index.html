@@ -13,19 +13,20 @@
       background-color: #ffffff;
     }
 
-    header {
+    /* Hero Banner */
+    .hero {
       background-color: #1d3a34;
       color: white;
-      padding: 30px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
-    header h1 {
+    .hero h1 {
       font-size: 2.5em;
       margin-bottom: 10px;
     }
 
-    header p {
+    .hero p {
       font-size: 1.1em;
       margin-bottom: 20px;
     }
@@ -81,7 +82,6 @@
     .service-card img {
       max-width: 150px;
       margin-bottom: 1px;
-      loading: lazy;
     }
 
     .service-card h3 {
@@ -111,7 +111,6 @@
     .testimonial-card strong {
       display: block;
       margin-top: 10px;
-      font-style: normal;
       color: #1d3a34;
     }
 
@@ -134,11 +133,11 @@
     }
 
     @media (max-width: 600px) {
-      header h1 {
+      .hero h1 {
         font-size: 2em;
       }
 
-      header p {
+      .hero p {
         font-size: 1em;
       }
 
@@ -150,15 +149,15 @@
   </style>
 </head>
 <body>
-  <!-- Navbar Placeholder (loaded via JS) -->
+  <!-- Navbar loaded via JS -->
   <div id="navbar-placeholder"></div>
 
   <!-- Hero Header -->
-  <header>
+  <section class="hero">
     <h1>Secure. Simplify. Scale.</h1>
     <p>Helping schools and small businesses stay secure, up-to-date, and on-track with expert IT consulting, procurement, and patch management.</p>
     <a class="cta-button" href="/contact.html">Book a Free Consultation</a>
-  </header>
+  </section>
 
   <!-- Services Section -->
   <section class="services" id="services">
@@ -217,7 +216,7 @@
     </div>
   </section>
 
-  <!-- Testimonials Section -->
+  <!-- Testimonials -->
   <section class="testimonials" id="testimonials">
     <h2>What Our Clients Say</h2>
     <div class="testimonial-card">
@@ -233,7 +232,7 @@
     </p>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section class="contact" id="contact">
     <h2>Get in Touch</h2>
     <p>Have a question or want to discuss your IT needs? You can send us a message or book a free 30-minute call below.</p>
