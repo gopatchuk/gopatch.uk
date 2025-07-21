@@ -15,7 +15,7 @@
       background-color: #ffffff;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       color: #1d3a34;
     }
 
@@ -63,6 +63,7 @@
       font-size: 1em;
       border-radius: 6px;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .cta-button:hover {
@@ -70,7 +71,7 @@
     }
 
     .calendly-wrapper {
-      margin-top: 40px;
+      margin-top: 60px;
     }
 
     footer {
@@ -110,11 +111,6 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    #success-modal h3 {
-      color: #1d3a34;
-      margin-bottom: 10px;
-    }
-
     #success-modal button {
       margin-top: 20px;
       background-color: #4CAF50;
@@ -134,7 +130,8 @@
 <body>
   <div id="navbar-placeholder"></div>
 
-  <header style="background-color: #1d3a34; color: white; text-align: center; padding: 60px 20px;">
+  <!-- Page Title Header -->
+  <header class="page-title">
     <h1>Contact Us</h1>
     <p>Send us a message or book a free call to get started</p>
   </header>
@@ -180,6 +177,7 @@
     </div>
   </div>
 
+  <!-- Scripts -->
   <script src="/scripts/navbar.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script>
@@ -233,7 +231,7 @@
             confetti({
               particleCount: 120,
               spread: 80,
-              origin: { y: 0.5 }
+              origin: { y: 0.4 }
             });
           }, 300);
 
