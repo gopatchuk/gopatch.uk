@@ -60,7 +60,7 @@ body {
   text-decoration: underline;
 }
 
-/* Hero Section */
+/* Hero Section (Homepage) */
 .hero {
   background-color: #1d3a34;
   color: white;
@@ -78,6 +78,20 @@ body {
   margin-bottom: 20px;
 }
 
+/* Page Title (Subpages) */
+.page-title {
+  background-color: #1d3a34;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.page-title h1,
+.page-title p {
+  color: white;
+}
+
+/* CTA Buttons */
 .cta-button {
   padding: 12px 24px;
   background-color: #4CAF50;
@@ -89,9 +103,9 @@ body {
 }
 
 .cta-button.secondary {
-  background-color: white;
-  color: #1d3a34;
-  border: 2px solid #1d3a34;
+  background-color: #B86A35; /* Gold-brown secondary */
+  color: white;
+  border: none;
 }
 
 /* Main Sections */
@@ -197,11 +211,11 @@ footer {
     align-items: flex-start;
   }
 
-  .hero h1 {
+  .hero h1, .page-title h1 {
     font-size: 2em;
   }
 
-  .hero p {
+  .hero p, .page-title p {
     font-size: 1em;
   }
 
